@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+
+@theme {
+	/* === Material Design 3 (M3) Color Tokens === */
+	/* Primary: Brand Green (#2f5c43) */
+	--color-primary: #2f5c43;
+	--color-on-primary: #ffffff;
+	--color-primary-container: #d2e4d2;
+	--color-on-primary-container: #002111;
+
+	/* Secondary: Neutral Green (#4a6353) */
+	--color-secondary: #4a6353;
+	--color-on-secondary: #ffffff;
+	--color-secondary-container: #dceae2;
+	--color-on-secondary-container: #042111;
+
+	/* Tertiary: Muted Earth (#829f8d) */
+	--color-tertiary: #829f8d;
+	--color-on-tertiary: #ffffff;
+	--color-tertiary-container: #ddece1;
+	--color-on-tertiary-container: #062111;
+
+	/* Surface & Backgrounds */
+	--color-surface: #f4f7f4;
+	--color-on-surface: #1a2e22;
+	--color-surface-variant: #e0e8e2;
+	--color-on-surface-variant: #4a6353;
+	--color-outline: #727972;
+	--color-outline-variant: #c4cdc6;
+	--color-primary-hover: #1e3d2c;
+	--color-surface-glass: oklch(96% 0.01 145 / 80%);
+
+	/* Semantic */
+	--color-error: #ba1a1a;
+	--color-on-error: #ffffff;
+	--color-success: #28a745;
+
+	/* === Typography === */
+	--font-display: 'Inter', sans-serif;
+	--text-2xs: 0.625rem;
+
+	/* Elevation Shadows (M3 levels mapped to standard Tailwind keys) */
+	--shadow-sm: 0 1px 2px 0 oklch(0% 0 0 / 15%), 0 1px 3px 1px oklch(0% 0 0 / 10%);
+	--shadow-md: 0 1px 2px 0 oklch(0% 0 0 / 15%), 0 2px 6px 2px oklch(0% 0 0 / 10%);
+	--shadow-lg: 0 1px 3px 0 oklch(0% 0 0 / 15%), 0 4px 8px 3px oklch(0% 0 0 / 10%);
+}
+
+@layer base {
+	:root {
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--color-primary: #8fd0a3;
+			--color-on-primary: #00391d;
+			--color-primary-container: #15522e;
+			--color-on-primary-container: #abecd4;
+
+			--color-surface: #0b120e;
+			--color-on-surface: #e2e8e4;
+			--color-surface-variant: #4a6353;
+			--color-on-surface-variant: #c2d1c6;
+			--color-outline-variant: #4a6353;
+			--color-primary-hover: #b1ebd5;
+			--color-surface-glass: oklch(15% 0.02 145 / 80%);
+		}
+	}
+
+	body {
+		background-color: var(--color-surface);
+		color: var(--color-on-surface);
+		font-family: var(--font-display);
+		-webkit-font-smoothing: antialiased;
+		transition:
+			background-color 0.3s ease,
+			color 0.3s ease;
+	}
+}
+
+/* Material Design Utilities */
+.surface-container {
+	@apply rounded-2xl bg-surface p-6 shadow-sm;
+}
+
+.surface-elevated {
+	@apply rounded-2xl bg-surface-variant p-6 shadow-md;
+}
