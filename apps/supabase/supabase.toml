@@ -1,4 +1,0 @@
-project_ref = "zvhjdbyaejjytcdbzxec"
-
-# Use the default functions folder for Edge Function deployment.
-functions = "functions"
